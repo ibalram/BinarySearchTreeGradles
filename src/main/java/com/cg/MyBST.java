@@ -27,4 +27,12 @@ public class MyBST<K extends Comparable<K>> {
 
 	}
 
+	public int getSize() {
+		return this.getSizeRecursive(root);
+	}
+
+	private int getSizeRecursive(MyBinaryNode<K> root) {
+		return root == null ? 0 : 1 + this.getSizeRecursive(root.left) + this.getSizeRecursive(root.right);
+	}
+
 }
