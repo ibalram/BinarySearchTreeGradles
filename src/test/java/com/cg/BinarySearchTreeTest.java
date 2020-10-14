@@ -1,6 +1,6 @@
 package com.cg;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
@@ -16,6 +16,16 @@ public class BinarySearchTreeTest {
 		for(int i = 0; i<list.length; ++i)
 			bst.add(list[i]);
 		assertEquals(13, bst.getSize());
+	}
+	
+	@Test
+	public void testSearchInBinarySearchTree() {
+		MyBST bst = new MyBST<Integer>();
+		int[] list = {56,30,70, 22,40,11,3,16,60,95,65, 63, 67};
+		
+		for(int i = 0; i<list.length; ++i)
+			bst.add(list[i]);
+		assertTrue(bst.search(63));
 	}
 	
 }
